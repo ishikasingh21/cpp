@@ -44,3 +44,67 @@ int main()
             break;
     }
 }
+
+void gpa_cal()
+{
+    int q;
+    system("cls");
+    cout<<"-------------- GPA Calculating -----------------"<<endl;
+    cout<<" How many subject's points do you want to calculate? : ";
+    cin>>q;
+
+    float credit [q];
+    float point [q];
+
+    cout<<endl;
+    for(int i=0;i<q;i++)
+    {
+        cout<<"Enter the credit for the subject "<<i+1<<": ";
+        cin>>credit[i];
+        cout<<endl;
+        cout<<"Enter the point of the subject "<<i+1<<": ";
+        cin>>point[i];
+        cout<<"-----------------------------------\n\n"<<endl;
+    }
+
+    float sum=0;
+    float tot;
+    for(int j=0;j<q;j++)
+    {
+        tot=credit[j]*point[j];
+        sum=sum+tot;
+    }
+
+    float totCr=0;
+    for(int k=0;k<q;k++)
+    {
+        totCr=totCr+credit[k];
+    }
+
+    cout<<"\n\n\nTotal Points: "<<sum<<" . Total Credits: "<<totCr<<" .Total GPA: "<<sum/totCr<<" ."<<endl;
+
+    sub:
+    int inmenu;
+    cout<<"\n\n\n1. Calculate Again"<<endl;
+    cout<<"2. Go Back to Main Menu"<<endl;
+    cout<<"3. Exit This App \n\n"<<endl;
+    cout<<"Your Input: "<<endl;
+    cin>>inmenu;
+
+    switch(inmenu)
+    {
+        case 1:
+                gpa_cal();
+                break;
+        case 2:
+                main();
+                break;
+        case 3:
+                exit(EXIT_SUCCESS);
+
+        default:
+              cout<<"\n\nYou have Entered Wrong Input!Please Choose Again!"<<endl;
+              goto sub;
+    }
+}
+
