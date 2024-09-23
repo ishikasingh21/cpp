@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdlib.h>
-
 using namespace std;
 
 void gpa_cal();
@@ -57,8 +56,7 @@ void gpa_cal()
     float point [q];
 
     cout<<endl;
-    for(int i=0;i<q;i++)
-    {
+    for(int i=0;i<q;i++){
         cout<<"Enter the credit for the subject "<<i+1<<": ";
         cin>>credit[i];
         cout<<endl;
@@ -69,15 +67,13 @@ void gpa_cal()
 
     float sum=0;
     float tot;
-    for(int j=0;j<q;j++)
-    {
+    for(int j=0;j<q;j++){
         tot=credit[j]*point[j];
         sum=sum+tot;
     }
 
     float totCr=0;
-    for(int k=0;k<q;k++)
-    {
+    for(int k=0;k<q;k++){
         totCr=totCr+credit[k];
     }
 
@@ -119,21 +115,18 @@ void cgpa_cal()
     float semrs[l];
     int i;
 
-    for(i=0;i<l;i++)
-    {
+    for(i=0;i<l;i++){
         cout<<" Enter Semester "<<i+1<<" Result(GPA): ";
         cin>>semrs[i];
         cout<<"\n"<<endl;
     }
 
     float semtot=0;
-    for(int j=0;j<l;j++)
-    {
+    for(int j=0;j<l;j++){
         semtot=semtot+semrs[j];
     }
 
     cout<<"******** Your CGPA is "<<semtot/l<<" **********"<<endl;
-
 
     sub:
     int inmenu;
