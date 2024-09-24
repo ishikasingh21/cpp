@@ -180,3 +180,31 @@ void UserInput()
         }
     }
 }
+
+
+
+int main()
+{
+    string playerName;
+    cout << "Enter your name: ";
+    cin >> playerName;
+    int dfc = SetDifficulty();
+
+    GameInit();
+    while (!isGameOver) {
+        GameRender(playerName);
+        UserInput();
+        UpdateGame();
+        // creating a delay for according to the chosen difficulty
+        Sleep(dfc);
+    }
+
+    // Show the losing reason
+    system("cls"); // Clear the console one last time
+    cout << "Game Over!" << endl;
+    cout << "Reason: " << loseReason << endl;
+    cout << playerName << "'s Final Score: " << playerScore << endl;
+
+    return 0;
+}
+
