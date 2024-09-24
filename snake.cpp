@@ -156,3 +156,27 @@ int SetDifficulty()
     return dfc;
 }
 
+void UserInput()
+{
+    // Checks if a key is pressed or not
+    if (_kbhit()) {
+        // Getting the pressed key
+        switch (_getch()) {
+        case 'a':
+            sDir = LEFT;
+            break;
+        case 'd':
+            sDir = RIGHT;
+            break;
+        case 'w':
+            sDir = UP;
+            break;
+        case 's':
+            sDir = DOWN;
+            break;
+        case 'x':
+            isGameOver = true;
+            break;
+        }
+    }
+}
