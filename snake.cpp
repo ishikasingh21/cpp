@@ -32,3 +32,16 @@ bool isGameOver;
 
 // Variable to store the reason for losing
 string loseReason;
+
+
+void GameInit()
+{
+    isGameOver = false;
+    sDir = STOP;
+    x = width / 2;
+    y = height / 2;
+    fruitCordX = rand() % width;
+    fruitCordY = rand() % height;
+    playerScore = 0;
+    snakeTailLen = 0;  // Initialize the snake's tail length
+}
